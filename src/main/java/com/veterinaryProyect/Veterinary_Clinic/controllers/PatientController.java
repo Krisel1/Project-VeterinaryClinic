@@ -14,18 +14,19 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/patient")
+@CrossOrigin(origins = "*")
 public class PatientController {
 
     @Autowired
     PatientServices patientServices;
 
-    @GetMapping
+    @GetMapping(path = "")
     public List<Patient> getAllPatient() {
         return patientServices.getAllPatient();
     }
 
-    @GetMapping(path = "/patient/{id}")
+    @GetMapping(path = "/{id}")
     public Patient getPatientById(@PathVariable("id") Long id) {
         return patientServices.getById(id);
     }
