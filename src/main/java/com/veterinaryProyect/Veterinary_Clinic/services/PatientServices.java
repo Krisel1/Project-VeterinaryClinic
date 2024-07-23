@@ -22,5 +22,9 @@ public class PatientServices {
         return patient;
 
     }
+
+    public Patient createPatient(Patient newPatient){
+        return iPatientRepository.save(newPatient);
+    }
 }
 
