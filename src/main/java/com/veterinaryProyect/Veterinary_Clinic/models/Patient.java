@@ -47,13 +47,13 @@ public class Patient {
     @Column(name = "tutorphoneNumber")
     private String tutorPhoneNumber;
 
-    @ManyToMany
-    @JoinTable(
-            name = "patient_appointment",
-            joinColumns = @JoinColumn(name = "patient_id"),
-            inverseJoinColumns = @JoinColumn(name = "appointment_id")
-    )
-    private Set<Appointment> appointments = new HashSet<>();
+    //@ManyToMany
+    //@JoinTable(
+      //      name = "patient_appointment",
+        //    joinColumns = @JoinColumn(name = "patient_id"),
+          //  inverseJoinColumns = @JoinColumn(name = "appointment_id")
+    //)
+    //private Set<Appointment> appointments = new HashSet<>();
 
     //private String profileImage;
 

@@ -34,6 +34,6 @@ public class Appointment {
     @Column(name = "status")
     private boolean status;
 
-    @ManyToMany(mappedBy = "appointment")
-    private Set<Patient> patients = new HashSet<>();
+   //@ManyToMany(mappedBy = "appointment")
+    //private Set<Patient> patients = new HashSet<>();
 }
