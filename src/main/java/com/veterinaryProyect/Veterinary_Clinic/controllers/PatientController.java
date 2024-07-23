@@ -35,9 +35,4 @@ public class PatientController {
         return patientServices.getById(id);
     }
 
-    @PostMapping(path = "/patient")
-    public Patient createPatient(@RequestBody Patient newPatient) {
-        return patientServices.createPatient(newPatient);
-    }
-
 }
