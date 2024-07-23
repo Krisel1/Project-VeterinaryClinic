@@ -25,7 +25,7 @@ public class PatientController {
         return patientServices.getAllPatient();
     }
 
-    @GetMapping(path = "/images/{id}")
+    @GetMapping(path = "/patient/{id}")
     public Patient getPatientById(@PathVariable("id") Long id) {
         return patientServices.getById(id);
     }
