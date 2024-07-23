@@ -12,17 +12,18 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/appointment")
+@CrossOrigin(origins = "*")
 public class AppointmentController {
 
-    @Autowired
+    @Autowired(path = "")
     AppointmentServices appointmentServices;
 
     public List<Appointment> getAllAppointment() {
         return appointmentServices.getAllAppointment();
     }
 
-    @GetMapping(path = "/appointment/{id}")
+    @GetMapping(path = "/{id}")
     public Appointment getAppointmentById(@PathVariable("id") Long id) {
         return appointmentServices.getById(id);
     }
