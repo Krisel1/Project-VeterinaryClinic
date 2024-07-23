@@ -22,7 +22,7 @@ public class AppointmentController {
         return appointmentServices.getAllAppointment();
     }
 
-    @GetMapping(path = "/*/{id}")
+    @GetMapping(path = "/appointment/{id}")
     public Appointment getAppointmentById(@PathVariable("id") Long id) {
         return appointmentServices.getById(id);
     }
