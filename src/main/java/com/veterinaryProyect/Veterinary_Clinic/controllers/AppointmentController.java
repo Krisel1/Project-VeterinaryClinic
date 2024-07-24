@@ -14,17 +14,17 @@ public class AppointmentController {
 
     @Autowired
     AppointmentServices appointmentServices;
-
+    @GetMapping(path = "/appointment")
     public List<Appointment> getAllAppointment() {
         return appointmentServices.getAllAppointment();
     }
 
-    @GetMapping(path = "/*/{id}")
+    @GetMapping(path = "/appointment/{id}")
     public Appointment getAppointmentById(@PathVariable("id") Long id) {
         return appointmentServices.getById(id);
     }
 
-    @DeleteMapping(path = "/*/{id}")
+    @DeleteMapping(path = "/appointment/{id}")
     public void deleteAppointmentById(@PathVariable("id") Long id) {
         appointmentServices.deleteAppointment(id);
 

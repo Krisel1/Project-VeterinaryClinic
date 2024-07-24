@@ -6,7 +6,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.veterinaryProyect.Veterinary_Clinic.services.PatientServices;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -25,7 +24,7 @@ public class PatientControllerTest {
     public void deletePatientById_ShouldReturnOk() throws Exception {
         Long id = 1L;
 
-        mockMvc.perform(delete("/patients/{id}", id))
+        mockMvc.perform(delete("/patient/{id}", id))
                 .andExpect(status().isOk());
 
         verify(patientServices).deletePatient(id);
