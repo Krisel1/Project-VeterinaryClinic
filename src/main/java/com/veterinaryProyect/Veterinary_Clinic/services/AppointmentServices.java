@@ -5,6 +5,7 @@ import com.veterinaryProyect.Veterinary_Clinic.repositories.IAppointmentReposito
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 
 @Service
 public class AppointmentServices {
@@ -12,7 +13,18 @@ public class AppointmentServices {
     @Autowired
     IAppointmentRepository iAppointmentRepository;
 
-    public Appointment createAppointment(Appointment appointment) {
-       return iAppointmentRepository.save(appointment);
+    public List<Appointment> getAllAppointment() {
+        return (List<Appointment>) iAppointmentRepository.findAll();
     }
+
+    public Appointment getById(Long id) {
+        Appointment appointment;
+        appointment = iAppointmentRepository.findById(id).orElseThrow();
+        return appointment;
+
+    }
+
+    public void deleteAppointment(long id) {iAppointmentRepository.deleteById(id); }
+
+
 }
