@@ -16,7 +16,7 @@ public class PatientController {
     @Autowired
     PatientServices patientServices;
 
-    @GetMapping(path = "/patient")
+    @GetMapping(path = "/patients")
     public List<Patient> getAllPatient() {
         return patientServices.getAllPatient();
     }
