@@ -32,8 +32,8 @@ public class Patient {
     @Column(name = "gender")
     private String gender;
 
-    @Column(name = "identicationNumber")
-    private String identicationNumber;
+    @Column(name = "identificationNumber")
+    private String identificationNumber;
 
     @Column(name = "tutorFirstName")
     private String tutorFirstName;
@@ -44,14 +44,6 @@ public class Patient {
     @Column(name = "tutorphoneNumber")
     private String tutorPhoneNumber;
 
-    //@ManyToMany
-    //@JoinTable(
-      //      name = "patient_appointment",
-        //    joinColumns = @JoinColumn(name = "patient_id"),
-          //  inverseJoinColumns = @JoinColumn(name = "appointment_id")
-    //)
-    //private Set<Appointment> appointments = new HashSet<>();
 
-    //private String profileImage;
 
 }
