@@ -6,19 +6,17 @@ import com.veterinaryProyect.Veterinary_Clinic.services.PatientServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.management.InstanceNotFoundException;
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
-@RequestMapping("/patient")
-@CrossOrigin(origins = "*")
+@RequestMapping("/")
 public class PatientController {
 
     @Autowired
     PatientServices patientServices;
 
-    @GetMapping(path = "")
+    @GetMapping(path = "/patients")
     public List<Patient> getAllPatient() {
         return patientServices.getAllPatient();
     }
@@ -30,5 +28,9 @@ public class PatientController {
     public Patient getPatientById(@PathVariable("id") Long id) {
         return patientServices.getById(id);
     }
+
+    @DeleteMapping(path = "/patient/{id}")
+    public void deletePatientById(@PathVariable("id") Long id) {patientServices.deletePatient(id); }
+
 
 }
