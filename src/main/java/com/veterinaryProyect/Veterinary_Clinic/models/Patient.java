@@ -35,8 +35,8 @@ public class Patient {
     @Column(name = "gender")
     private String gender;
 
-    @Column(name = "identicationNumber")
-    private String identicationNumber;
+    @Column(name = "identificationNumber")
+    private String identificationNumber;
 
     @Column(name = "tutorFirstName")
     private String tutorFirstName;
@@ -46,6 +46,9 @@ public class Patient {
 
     @Column(name = "tutorphoneNumber")
     private String tutorPhoneNumber;
+
+    @Column(name = "treatments")
+    private String treatments;
 
     //@ManyToMany
     //@JoinTable(
