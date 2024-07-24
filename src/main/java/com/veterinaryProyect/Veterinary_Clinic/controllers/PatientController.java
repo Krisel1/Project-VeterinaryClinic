@@ -21,10 +21,7 @@ public class PatientController {
         return patientServices.getAllPatient();
     }
 
-    @PostMapping(path = "/patient")
-    public Patient createPatient(@RequestBody Patient patient) {
-        return patientServices.createPatient(patient);
-    }
+
     @GetMapping(path = "/{id}")
     public Patient getPatientById(@PathVariable("id") Long id) {
         return patientServices.getById(id);
