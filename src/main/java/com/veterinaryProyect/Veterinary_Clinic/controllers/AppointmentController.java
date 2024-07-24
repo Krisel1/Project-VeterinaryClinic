@@ -9,25 +9,20 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/appointment")
+@CrossOrigin(origins = "*")
 public class AppointmentController {
 
     @Autowired
     AppointmentServices appointmentServices;
-    @GetMapping(path = "/appointment")
+
     public List<Appointment> getAllAppointment() {
         return appointmentServices.getAllAppointment();
     }
 
-    @GetMapping(path = "/appointment/{id}")
+    @GetMapping(path = "/{id}")
     public Appointment getAppointmentById(@PathVariable("id") Long id) {
         return appointmentServices.getById(id);
-    }
-
-    @DeleteMapping(path = "/appointment/{id}")
-    public void deleteAppointmentById(@PathVariable("id") Long id) {
-        appointmentServices.deleteAppointment(id);
-
     }
 
 }
