@@ -6,19 +6,24 @@ import com.veterinaryProyect.Veterinary_Clinic.services.AppointmentServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/appointment")
+@CrossOrigin(origins = "*")
 public class AppointmentController {
 
     @Autowired
     AppointmentServices appointmentServices;
 
-
-    @PostMapping(path = "/appointments")
-    public Appointment createAppointment(@RequestBody Appointment appointment) {
-        return appointmentServices.createAppointment(appointment);
+    @GetMapping(path = "/")
+    public List<Appointment> getAllAppointment() {
+        return appointmentServices.getAllAppointment();
     }
 
+    @GetMapping(path = "/{id}")
+    public Appointment getAppointmentById(@PathVariable("id") Long id) {
+        return appointmentServices.getById(id);
+    }
 
 }
