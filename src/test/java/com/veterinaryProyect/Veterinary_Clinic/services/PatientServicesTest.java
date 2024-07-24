@@ -28,11 +28,10 @@ class PatientServicesTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-
             }
 
     @Test
-    void updatePatient_shouldUpdatePatient() {
+    void update_patient() {
         patient = new Patient(1L, "Sharik", 5, "mutt","fame","13-07-13","Vadim","Shevchenko","067118675");
         when(iPatientRepository.findById(patient.getId())).thenReturn(Optional.of(patient));
         updatedPatient = new Patient(1L, "Shariko", 7, "Mastiff","male","156-07-24","Svitlana","Franko","0674567389");

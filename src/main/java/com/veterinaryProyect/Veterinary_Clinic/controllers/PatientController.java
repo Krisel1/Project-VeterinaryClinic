@@ -24,11 +24,11 @@ public class PatientController {
     }
 
     @GetMapping(path = "/images/{id}")
-    public Patient getPatientById(@PathVariable("id") Long id) {
+    public Patient getPatientById(@PathVariable("id") long id) {
         return patientServices.getById(id);
     }
 
-    @PutMapping(path = "/patient/{id}")
+    @PutMapping(path = "/{id}")
     public void updateImage(@RequestBody Patient patient, @PathVariable long id) {
         patientServices.updatePatient(patient, id);
     }

@@ -20,11 +20,11 @@ public class AppointmentController {
     }
 
     @GetMapping(path = "/{id}")
-    public Appointment getAppointmentById(@PathVariable("id") Long id) {
+    public Appointment getAppointmentById(@PathVariable("id") long id) {
         return appointmentServices.getById(id);
     }
 
-    @PutMapping(path = "/appointment/{id}")
+    @PutMapping(path = "/{id}")
     public void updateImage(@RequestBody Appointment appointment, @PathVariable long id) {
         appointmentServices.updateAppointment(appointment, id);
     }

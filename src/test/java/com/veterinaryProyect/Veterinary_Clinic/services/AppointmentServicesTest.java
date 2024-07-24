@@ -33,7 +33,7 @@ class AppointmentServicesTest {
     }
 
     @Test
-    void updatePatient_shouldUpdatePatient() {
+    void update_appointment() {
         Appointment appointment = new Appointment(1L, LocalDateTime.of(2023, 2, 13, 7, 12), "hello", "heard", true);
         when(iAppointmentRepository.findById(appointment.getId())).thenReturn(Optional.of(appointment));
         Appointment updatedAppointment = new Appointment(1L, LocalDateTime.of(2024, 7, 23, 14, 30), "good day", "legs", false);
