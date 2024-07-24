@@ -14,7 +14,7 @@ import com.veterinaryProyect.Veterinary_Clinic.models.Appointment;
 import com.veterinaryProyect.Veterinary_Clinic.services.AppointmentServices;
 
 @RestController
-@RequestMapping("/appointment")
+@RequestMapping("/")
 @CrossOrigin(origins = "*")
 
 public class AppointmentController {
@@ -22,12 +22,12 @@ public class AppointmentController {
     @Autowired
     AppointmentServices appointmentServices;
 
-    @GetMapping(path = "")
+    @GetMapping(path = "/appointment")
     public List<Appointment> getAllAppointment() {
         return appointmentServices.getAllAppointment();
     }
 
-    @GetMapping(path = "/{id}")
+    @GetMapping(path = "/appointment/{id}")
     public Appointment getAppointmentById(@PathVariable("id") Long id) {
         return appointmentServices.getById(id);
     }
