@@ -35,7 +35,7 @@ public class controllerPatientTest {
 
         doNothing().when(patientServices).updatePatient(updatedPatient,1L);
 
-        mockMvc.perform(put("/patients/patient/1")
+        mockMvc.perform(put("/patients/1")
                         .contentType("application/json")
                         .content("{\"name\":\"John Doe\", \"age\":5, \"breed\":\"Beagle\", \"gender\":\"Male\", \"identicationNumber\":\"12345\", \"tutorFirstName\":\"Jane\", \"tutorLastName\":\"Doe\", \"tutorPhoneNumber\":\"555-1234\"}"))
                 .andExpect(status().isOk());

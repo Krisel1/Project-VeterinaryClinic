@@ -41,7 +41,7 @@ class AppointmentControllerTest {
 
         doNothing().when(appointmentServices).updateAppointment(updatedAppointment,1L);
 
-        mockMvc.perform(put("/appointments/appointment/1")
+        mockMvc.perform(put("/appointments/1")
                         .contentType("application/json")
                         .content("{\"title\":\"Updated Title\", \"description\":\"Updated Description\", \"favorite\":false}"))
                 .andExpect(status().isOk());
