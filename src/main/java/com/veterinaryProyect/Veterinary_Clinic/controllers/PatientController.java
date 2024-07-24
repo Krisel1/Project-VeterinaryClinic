@@ -17,7 +17,7 @@ import com.veterinaryProyect.Veterinary_Clinic.services.PatientServices;
 
 
 @RestController
-@RequestMapping("/patient")
+@RequestMapping("/")
 @CrossOrigin(origins = "*")
 
 public class PatientController {
@@ -25,12 +25,12 @@ public class PatientController {
     @Autowired
     PatientServices patientServices;
 
-    @GetMapping(path = "")
+    @GetMapping(path = "/patient")
     public List<Patient> getAllPatient() {
         return patientServices.getAllPatient();
     }
 
-    @GetMapping(path = "/{id}")
+    @GetMapping(path = "/patient/{id}")
     public Patient getPatientById(@PathVariable("id") Long id) {
         return patientServices.getById(id);
     }
