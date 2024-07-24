@@ -1,20 +1,18 @@
 package com.veterinaryProyect.Veterinary_Clinic.controllers;
 
 
+import com.veterinaryProyect.Veterinary_Clinic.models.Appointment;
 import com.veterinaryProyect.Veterinary_Clinic.models.Patient;
 import com.veterinaryProyect.Veterinary_Clinic.services.PatientServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.management.InstanceNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/patients")
 public class PatientController {
 
     @Autowired
@@ -30,4 +28,8 @@ public class PatientController {
         return patientServices.getById(id);
     }
 
+    @PutMapping(path = "/patient/{id}")
+    public void updateImage(@RequestBody Patient patient, @PathVariable long id) {
+        patientServices.updatePatient(patient, id);
+    }
 }
