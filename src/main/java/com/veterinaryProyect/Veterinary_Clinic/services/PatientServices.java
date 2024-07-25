@@ -16,13 +16,9 @@ public class PatientServices {
     IPatientRepository iPatientRepository;
 
 
-    public Patient createPatient(Patient patient) {
-        return iPatientRepository.save(patient);
-    }
-
     public void deletePatient(long id) {iPatientRepository.deleteById(id); }
 
-    public List<Patient> getAllPatient() {
+   /* public List<Patient> getAllPatient() {
         return (List<Patient>) iPatientRepository.findAll();
     }
 
@@ -31,7 +27,7 @@ public class PatientServices {
         patient = iPatientRepository.findById(id).orElseThrow();
         return patient;
 
-    }
+    }*/
 
 }
 

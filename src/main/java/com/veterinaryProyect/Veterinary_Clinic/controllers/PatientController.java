@@ -1,12 +1,10 @@
 package com.veterinaryProyect.Veterinary_Clinic.controllers;
 
 
-import com.veterinaryProyect.Veterinary_Clinic.models.Patient;
 import com.veterinaryProyect.Veterinary_Clinic.services.PatientServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 
 @RestController
@@ -15,22 +13,6 @@ public class PatientController {
 
     @Autowired
     PatientServices patientServices;
-
-    @GetMapping(path = "/patient")
-    public List<Patient> getAllPatient() {
-        return patientServices.getAllPatient();
-    }
-
-    @GetMapping(path = "/{id}")
-    public Patient getPatientById(@PathVariable("id") Long id) {
-        return patientServices.getById(id);
-    }
-
-
-    @PostMapping(path = "/patients")
-    public Patient createPatient(@RequestBody Patient patient) {
-        return patientServices.createPatient(patient);
-    }
 
 
 
