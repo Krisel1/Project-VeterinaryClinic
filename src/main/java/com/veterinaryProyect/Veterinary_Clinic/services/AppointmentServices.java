@@ -12,6 +12,7 @@ public class AppointmentServices {
     @Autowired
     IAppointmentRepository iAppointmentRepository;
 
+
     public Appointment createAppointment(Appointment appointment) {
        return iAppointmentRepository.save(appointment);
     }
