@@ -36,6 +36,4 @@ public class Appointment {
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
-   //@ManyToMany(mappedBy = "appointment")
-    //private Set<Patient> patients = new HashSet<>();
 }

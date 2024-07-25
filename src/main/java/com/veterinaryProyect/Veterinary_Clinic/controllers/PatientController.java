@@ -19,5 +19,4 @@ public class PatientController {
     public Patient createPatient(@RequestBody Patient patient) {
         return patientServices.createPatient(patient);
     }
-
 }

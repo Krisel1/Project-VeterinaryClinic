@@ -33,7 +33,7 @@ public class Patient {
     @Column(name = "gender")
     private String gender;
 
-    @Column(name = "identificationNumber", unique = true, nullable = false)
+    @Column(name = "identificationNumber", nullable = false)
     private String identificationNumber;
 
     @Column(name = "tutorFirstName")
@@ -54,13 +54,4 @@ public class Patient {
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
     private List<Appointment> appointment;
 
-    //@ManyToMany
-    //@JoinTable(
-      //      name = "patient_appointment",
-        //    joinColumns = @JoinColumn(name = "patient_id"),
-          //  inverseJoinColumns = @JoinColumn(name = "appointment_id")
-    //)
-    //private Set<Appointment> appointments = new HashSet<>();
-
-    //
 }
