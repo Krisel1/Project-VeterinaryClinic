@@ -21,17 +21,23 @@ public class PatientController {
         return patientServices.getAllPatient();
     }
 
-    @PostMapping(path = "/patient")
-    public Patient createPatient(@RequestBody Patient patient) {
-        return patientServices.createPatient(patient);
-    }
     @GetMapping(path = "/{id}")
     public Patient getPatientById(@PathVariable("id") Long id) {
         return patientServices.getById(id);
     }
 
+
     @DeleteMapping(path = "/patient/{id}")
     public void deletePatientById(@PathVariable("id") Long id) {patientServices.deletePatient(id); }
 
 
+    @PostMapping(path = "/patient")
+    public Patient createPatient(@RequestBody Patient patient) {
+        return patientServices.createPatient(patient);
+    }
+
+    @PutMapping(path = "/patient/{id}")
+    public void updatePatient(@RequestBody Patient patient, @PathVariable Long id) {
+        patientServices.updatePatient(patient, id);
+    }
 }
