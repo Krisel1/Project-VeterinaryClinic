@@ -6,7 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.mapping.List;
 
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Setter
@@ -44,6 +47,17 @@ public class Patient {
     @Column(name = "tutorphoneNumber")
     private String tutorPhoneNumber;
 
+    @Column(name = "treatments")
+    private String treatments;
 
+    //@ManyToMany
+    //@JoinTable(
+      //      name = "patient_appointment",
+        //    joinColumns = @JoinColumn(name = "patient_id"),
+          //  inverseJoinColumns = @JoinColumn(name = "appointment_id")
+    //)
+    //private Set<Appointment> appointments = new HashSet<>();
+
+    //private String profileImage;
 
 }

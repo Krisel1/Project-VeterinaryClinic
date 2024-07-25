@@ -6,7 +6,6 @@ import com.veterinaryProyect.Veterinary_Clinic.services.AppointmentServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/")
@@ -14,6 +13,7 @@ public class AppointmentController {
 
     @Autowired
     AppointmentServices appointmentServices;
+<<<<<<< HEAD
     @GetMapping(path = "/appointment")
     public List<Appointment> getAllAppointment() {
         return appointmentServices.getAllAppointment();
@@ -23,6 +23,15 @@ public class AppointmentController {
     public Appointment getAppointmentById(@PathVariable("id") Long id) {
         return appointmentServices.getById(id);
     }
+=======
+
+
+    @PostMapping(path = "/appointments")
+    public Appointment createAppointment(@RequestBody Appointment appointment) {
+        return appointmentServices.createAppointment(appointment);
+    }
+
+>>>>>>> feature/create
 
     @DeleteMapping(path = "/appointment/{id}")
     public void deleteAppointmentById(@PathVariable("id") Long id) {
