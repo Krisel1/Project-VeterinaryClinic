@@ -15,6 +15,9 @@ public class AppointmentServices {
 
     public List<Appointment> getAllAppointment() {
         return (List<Appointment>) iAppointmentRepository.findAll();
+
+    public Appointment createAppointment(Appointment appointment) {
+       return iAppointmentRepository.save(appointment);
     }
 
     public Appointment getById(Long id) {
