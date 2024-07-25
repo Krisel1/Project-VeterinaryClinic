@@ -47,6 +47,9 @@ public class Patient {
     @Column(name = "tutorphoneNumber")
     private String tutorPhoneNumber;
 
+    //@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
+    //private List<Appointment> appointment;
+
     //@ManyToMany
     //@JoinTable(
       //      name = "patient_appointment",
