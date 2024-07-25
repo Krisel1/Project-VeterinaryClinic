@@ -6,10 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.mapping.List;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Setter
@@ -35,7 +33,7 @@ public class Patient {
     @Column(name = "gender")
     private String gender;
 
-    @Column(name = "identificationNumber")
+    @Column(name = "identificationNumber", unique = true, nullable = false)
     private String identificationNumber;
 
     @Column(name = "tutorFirstName")
@@ -47,8 +45,14 @@ public class Patient {
     @Column(name = "tutorphoneNumber")
     private String tutorPhoneNumber;
 
-    @Column(name = "treatments")
-    private String treatments;
+    @Column(name = "treatment")
+    private String treatment;
+
+    @Column(name = "profileImage")
+    private String profileImage;
+
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
+    private List<Appointment> appointment;
 
     //@ManyToMany
     //@JoinTable(
@@ -58,6 +62,5 @@ public class Patient {
     //)
     //private Set<Appointment> appointments = new HashSet<>();
 
-    //private String profileImage;
-
+    //
 }
